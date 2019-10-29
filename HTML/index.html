@@ -10,17 +10,44 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../CSS/main.css" />
-    <title>Document</title>
+    <title>Pomodoro Clock</title>
   </head>
-  <body>
 
-    
-    <script src="../JS/scripts.js"></script>
+  <body>
+    <div class="clock">
+      <div class="progress-radial step-0 session">
+        <div class="main-display overlay"></div>
+      </div>
+      <div class="session-info">
+        <div class="session-count"></div>
+      </div>
+      <div class="settings">
+        <div class="time-session">
+          <h6>Session Time</h6>
+          <p class="time-session-display"></p>
+          <button class="minus">-</button>
+          <button class="plus">+</button>
+        </div>
+
+        <div class="time-break">
+          <h6>Break Time</h6>
+          <p class="time-break-display"></p>
+          <button class="minus">-</button>
+          <button class="plus">+</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="time-start">Start</button>
+        <button class="time-reset">Reset</button>
+      </div>
+    </div>
+
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous"
     ></script>
     <script
@@ -33,5 +60,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+    <script src="../JS/scripts.js"></script>
   </body>
 </html>

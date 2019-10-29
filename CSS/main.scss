@@ -1,0 +1,151 @@
+$background-radial-start-color: #e6c79c;
+
+$background-radial-end-color: #6fd08c;
+
+$card-background-color: #78586f;
+$card-border-radius: 4px;
+$card-box-shadow: 0px 0px 33px 15px rgb(68, 101, 110),
+  0 25px 55px 0 rgb(63, 98, 107);
+
+$main-text-color: #3fabdd;
+
+$radial-session-color: #deba6f;
+$radial-break-color: #823038;
+
+$radial-overlay-color: #1e000e;
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(
+    60deg,
+    $background-radial-start-color,
+    $background-radial-end-color
+  );
+  padding-top: 20px;
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  @media (min-height: 500px) {
+    align-items: center;
+    padding-top: 0px;
+  }
+}
+
+.clock {
+  width: 275px;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: $card-background-color;
+  box-shadow: $card-box-shadow;
+  border-radius: $card-border-radius;
+  font-family: "Vast Shadow", cursive;
+
+  .progress-radial {
+    display: inline-block;
+    position: relative;
+    font-size: 2.2em;
+    width: 6em;
+    padding-bottom: 6em;
+    border-radius: 50%;
+    background: $radial-session-color;
+
+    .overlay {
+      background: $radial-overlay-color;
+      position: absolute;
+      top: 5%;
+      bottom: 5%;
+      right: 5%;
+      left: 5%;
+      border-radius: 50%;
+      padding-top: 34%;
+    }
+
+    &.session .overlay {
+      color: #96e0f7;
+    }
+
+    &.break .overlay {
+      color: #d896f7;
+    }
+  }
+}
+
+.session-info,
+.settings,
+.controls {
+  color: $main-text-color;
+}
+
+.settings {
+  border-top: 3px dotted #818;
+  border-bottom: 3px dotted #818;
+  display: inline-flex;
+  margin: 10px;
+
+  .time-session,
+  .time-break {
+    display: inline-block;
+    padding: 20px;
+
+    h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    button {
+      background-color: rgba(255, 49, 203, 0.25);
+      border: none;
+      border-radius: 4px;
+      width: 30px;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(251, 87, 210, 0.383);
+      }
+    }
+    .time-session-display,
+    .time-break-display {
+      margin-bottom: 8px;
+      margin-top: 0;
+      line-height: 1em;
+    }
+
+    .time-session-display {
+      color: $radial-session-color;
+    }
+    .time-break-display {
+      color: $radial-break-color;
+    }
+  }
+}
+
+.controls {
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  button {
+    background-color: rgba(255, 49, 203, 0.25);
+    border: none;
+    border-radius: 4px;
+    color: $main-text-color;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease-in-out;
+    height: 40px;
+    width: 70px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(251, 87, 210, 0.383);
+    }
+  }
+}

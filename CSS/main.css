@@ -1,0 +1,131 @@
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(60deg, #e6c79c, #6fd08c);
+  padding-top: 20px;
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+}
+@media (min-height: 500px) {
+  body {
+    align-items: center;
+    padding-top: 0px;
+  }
+}
+
+.clock {
+  width: 275px;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #78586f;
+  box-shadow: 0px 0px 33px 15px #44656e, 0 25px 55px 0 #3f626b;
+  border-radius: 4px;
+  font-family: "Vast Shadow", cursive;
+}
+.clock .progress-radial {
+  display: inline-block;
+  position: relative;
+  font-size: 2.2em;
+  width: 6em;
+  padding-bottom: 6em;
+  border-radius: 50%;
+  background: #deba6f;
+}
+.clock .progress-radial .overlay {
+  background: #1e000e;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  right: 5%;
+  left: 5%;
+  border-radius: 50%;
+  padding-top: 34%;
+}
+.clock .progress-radial.session .overlay {
+  color: #96e0f7;
+}
+.clock .progress-radial.break .overlay {
+  color: #d896f7;
+}
+
+.session-info,
+.settings,
+.controls {
+  color: #3fabdd;
+}
+
+.settings {
+  border-top: 3px dotted #818;
+  border-bottom: 3px dotted #818;
+  display: inline-flex;
+  margin: 10px;
+}
+.settings .time-session,
+.settings .time-break {
+  display: inline-block;
+  padding: 20px;
+}
+.settings .time-session h6,
+.settings .time-break h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.settings .time-session button,
+.settings .time-break button {
+  background-color: rgba(255, 49, 203, 0.25);
+  border: none;
+  border-radius: 4px;
+  width: 30px;
+  transition: background-color 0.2s ease-in-out;
+}
+.settings .time-session button:hover, .settings .time-session button:focus,
+.settings .time-break button:hover,
+.settings .time-break button:focus {
+  background-color: rgba(251, 87, 210, 0.383);
+}
+.settings .time-session .time-session-display,
+.settings .time-session .time-break-display,
+.settings .time-break .time-session-display,
+.settings .time-break .time-break-display {
+  margin-bottom: 8px;
+  margin-top: 0;
+  line-height: 1em;
+}
+.settings .time-session .time-session-display,
+.settings .time-break .time-session-display {
+  color: #deba6f;
+}
+.settings .time-session .time-break-display,
+.settings .time-break .time-break-display {
+  color: #823038;
+}
+
+.controls {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.controls button {
+  background-color: rgba(255, 49, 203, 0.25);
+  border: none;
+  border-radius: 4px;
+  color: #3fabdd;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease-in-out;
+  height: 40px;
+  width: 70px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.controls button:hover, .controls button:focus {
+  background-color: rgba(251, 87, 210, 0.383);
+}
+
+/*# sourceMappingURL=main.css.map */
