@@ -23,6 +23,7 @@ $(function() {
   $(".time-reset").click(function() {
     clock.reset();
   });
+
 });
 function Clock() {
   var startTime = 1500;
@@ -34,6 +35,8 @@ function Clock() {
   var active = false;
   var _this = this;
   var timer;
+  var startAudio = new Audio("../assets/start.mp3");
+  var endAudio = new Audio("../assets/end.mp3");
 
   //Function to convert a number of seconds into a formatted time string
   function formatTime(secs) {
@@ -125,10 +128,12 @@ function Clock() {
       if (sessionCount === 0) {
         sessionCount = 1;
         this.displaySessionCount();
+        startAudio.play();
       }
       $(".time-start").text("Pause");
       timer = setInterval(function() {
         _this.stepDown();
+        
       }, 1000);
     } else {
       $(".time-start").text("Start");
@@ -146,6 +151,7 @@ function Clock() {
           currentTime = breakTime;
           startTime = breakTime;
           this.displaySessionCount();
+          endAudio.play();
         } else {
           mode = "Session";
           currentTime = sessionTime;
@@ -153,6 +159,7 @@ function Clock() {
           startTime = sessionTime;
           sessionCount++;
           this.displaySessionCount();
+          startAudio.play();
         }
       }
     }

@@ -14,6 +14,8 @@ $radial-break-color: #823038;
 
 $radial-overlay-color: #1e000e;
 
+$radial-bg-color: rgb(5, 255, 5);
+
 html,
 body {
   box-sizing: border-box;
@@ -146,6 +148,78 @@ body {
     &:hover,
     &:focus {
       background-color: rgba(251, 87, 210, 0.383);
+    }
+  }
+}
+
+//radial setup
+
+$increment: 3.6; //used to calculate number of degrees that the gradient should calculate
+
+@for $i from 0 through 100 {
+  .step-#{$i} {
+    @if $i < 50 {
+      $nextDeg: 90deg + ($increment * $i);
+      &.session {
+        background-image: linear-gradient(
+            90deg,
+            $radial-bg-color 50%,
+            transparent 50%,
+            transparent
+          ),
+          linear-gradient(
+            $nextDeg,
+            $radial-session-color 50%,
+            $radial-bg-color 50%,
+            $radial-bg-color
+          );
+      }
+      &.break {
+        background-image: linear-gradient(
+            90deg,
+            $radial-bg-color 50%,
+            transparent 50%,
+            transparent
+          ),
+          linear-gradient(
+            $nextDeg,
+            $radial-break-color 50%,
+            $radial-bg-color 50%,
+            $radial-bg-color
+          );
+      }
+    } @else {
+      $nextDeg: -90deg + ($increment * ($i - 50));
+      &.session {
+        background-image: linear-gradient(
+            $nextDeg,
+            $radial-session-color 50%,
+            transparent 50%,
+            transparent
+          ),
+          linear-gradient(
+            270deg,
+            $radial-session-color 50%,
+            $radial-bg-color 50%,
+            $radial-bg-color
+          );
+
+      }
+      &.break {
+        background-image: linear-gradient(
+            $nextDeg,
+            $radial-break-color 50%,
+            transparent 50%,
+            transparent
+          ),
+          linear-gradient(
+            270deg,
+            $radial-break-color 50%,
+            $radial-bg-color 50%,
+            $radial-bg-color
+          );
+          
+      }
     }
   }
 }
